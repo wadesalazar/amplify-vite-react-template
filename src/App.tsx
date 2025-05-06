@@ -2,7 +2,14 @@ import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 import { useAuthenticator } from '@aws-amplify/ui-react';
+import { signInWithRedirect } from 'aws-amplify/auth';
 const client = generateClient<Schema>();
+
+await signInWithRedirect({
+  provider: {
+    custom: 'MicrosoftEntraIDSAML'
+  }
+});
 
 function App() {
 
@@ -40,7 +47,8 @@ function App() {
       <div>
         🥳 App successfully hosted. Try creating a new todo.
         <br />
-        There should be a button just below this 
+        Does the redirect work? 
+        <br />
         <button onClick={signOut}>Sign out</button>
       </div>
       

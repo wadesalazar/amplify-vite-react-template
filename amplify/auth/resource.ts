@@ -11,10 +11,9 @@ export const auth = defineAuth({
           metadataType: 'URL', // or 'FILE'
         },
       },
-      logoutUrls: ['http://localhost:3000/', 'https://mywebsite.com'],
+      logoutUrls: ['https://main.d2cx1fhwdhhg2o.amplifyapp.com/'],
       callbackUrls: [
-        'http://localhost:3000/profile',
-        'https://mywebsite.com/profile',
+        'https://main.d2cx1fhwdhhg2o.amplifyapp.com/',
       ],
     },
   },

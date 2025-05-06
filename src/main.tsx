@@ -7,20 +7,12 @@ import outputs from "../amplify_outputs.json";
 import "./index.css";
 import '@aws-amplify/ui-react/styles.css';
 
-import { signInWithRedirect } from 'aws-amplify/auth';
-
-await signInWithRedirect({
-  provider: {
-    custom: 'MicrosoftEntraIDSAML'
-  }
-});
-
 Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Authenticator>
       <App />
-    </Authenticator>
+    </Authenticator >
   </React.StrictMode>
 );
