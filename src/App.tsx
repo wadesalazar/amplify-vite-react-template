@@ -1,25 +1,9 @@
 import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
-import { useAuthenticator } from '@aws-amplify/ui-react';
-import { signInWithRedirect } from 'aws-amplify/auth';
 const client = generateClient<Schema>();
 
 function App() {
-
-  async function trytodoit() {
-    const user = await signInWithRedirect({
-      provider: {
-        custom: 'MicrosoftEntraIDSAML'
-      }
-    });
-    console.log(user)
-  }
-
-  trytodoit()
-
-
-  const { signOut } = useAuthenticator();
 
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
@@ -53,9 +37,8 @@ function App() {
       <div>
         🥳 App successfully hosted. Try creating a new todo.
         <br />
-        Does the redirect work?
+        Does the redirect work now ??? ?
         <br />
-        <button onClick={signOut}>Sign out</button>
       </div>
 
     </main>
