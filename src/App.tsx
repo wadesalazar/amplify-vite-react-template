@@ -5,13 +5,19 @@ import { useAuthenticator } from '@aws-amplify/ui-react';
 import { signInWithRedirect } from 'aws-amplify/auth';
 const client = generateClient<Schema>();
 
-await signInWithRedirect({
-  provider: {
-    custom: 'MicrosoftEntraIDSAML'
-  }
-});
-
 function App() {
+
+  async function trytodoit() {
+    const user = await signInWithRedirect({
+      provider: {
+        custom: 'MicrosoftEntraIDSAML'
+      }
+    });
+    console.log(user)
+  }
+
+  trytodoit()
+
 
   const { signOut } = useAuthenticator();
 
@@ -27,7 +33,7 @@ function App() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
   }
 
-    
+
   function deleteTodo(id: string) {
     client.models.Todo.delete({ id })
   }
@@ -38,7 +44,7 @@ function App() {
       <button onClick={createTodo}>+ new</button>
       <ul>
         {todos.map((todo) => (
-          <li 
+          <li
             onClick={() => deleteTodo(todo.id)}
             key={todo.id}>{todo.content}
           </li>
@@ -47,11 +53,11 @@ function App() {
       <div>
         🥳 App successfully hosted. Try creating a new todo.
         <br />
-        Does the redirect work? 
+        Does the redirect work?
         <br />
         <button onClick={signOut}>Sign out</button>
       </div>
-      
+
     </main>
   );
 }

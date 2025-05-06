@@ -13,7 +13,7 @@ export const auth = defineAuth({
       },
       logoutUrls: ['https://main.d2cx1fhwdhhg2o.amplifyapp.com/'],
       callbackUrls: [
-        'https://main.d2cx1fhwdhhg2o.amplifyapp.com/',
+        'https://main.d2cx1fhwdhhg2o.amplifyapp.com/'
       ],
     },
   },

@@ -14,3 +14,9 @@ Auth: {
        }
     }
   }
+
+
+  npx ampx sandbox --profile amplify-policy-640168431640
+
+
+  
