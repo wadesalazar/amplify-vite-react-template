@@ -10,7 +10,11 @@ export const auth = defineAuth({
           metadataContent: 'https://portal.sso.us-east-1.amazonaws.com/saml/metadata/NjQwMTY4NDMxNjQwX2lucy1lMGI3MzBiMGNlZGU1ZTU0', // or content of the metadata file
           metadataType: 'URL', // or 'FILE'
         },
+        attributeMapping: {
+          email: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+        }
       },
+      
       logoutUrls: ['https://main.d2cx1fhwdhhg2o.amplifyapp.com/'],
       callbackUrls: [
         'https://main.d2cx1fhwdhhg2o.amplifyapp.com/'
