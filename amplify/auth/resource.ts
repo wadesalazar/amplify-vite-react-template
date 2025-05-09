@@ -22,3 +22,8 @@ export const auth = defineAuth({
     },
   },
 });
+
+
+
+// must change several settings in both the IdP ( SAML App in IDC ) and cognito's client app and IdP configuration
+
