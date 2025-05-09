@@ -11,7 +11,7 @@ export const auth = defineAuth({
           metadataType: 'URL', // or 'FILE'
         },
         attributeMapping: {
-          email: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+          email: "email",
         }
       },
       
